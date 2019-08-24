@@ -1,0 +1,18 @@
+
+;; ----- smex-history -----
+(
+ switch-window
+ other-window
+ cd
+ 5x5
+ arp
+ dbx
+ dig
+)
+
+;; ----- smex-data -----
+(
+ (mac-switch-meta . 1)
+ (other-window . 2)
+ (switch-window . 1)
+)

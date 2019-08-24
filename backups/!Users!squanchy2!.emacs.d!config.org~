@@ -1,0 +1,338 @@
+#+STARTUP: content hidestamrs indent
+* Keybinds
+ #+begin_SRC emacs-lisp
+    ;; Mac global keybinds
+    (global-set-key [(hyper a)] 'mark-whole-buffer)
+    (global-set-key [(hyper v)] 'yank)
+    (global-set-key [(hyper c)] 'kill-ring-save)
+    (global-set-key [(hyper s)] 'save-buffer)
+    (global-set-key [(hyper l)] 'goto-line)
+    (global-set-key [(hyper w)]
+                    (lambda () (interactive) (delete-window)))
+    (global-set-key [(hyper z)] 'undo)
+
+   ;;emacs terminal
+   (global-set-key (kbd "H-;") 'ansi-term)
+
+   ;;multiple-cursors
+   (global-set-key [(hyper >)] 'mc/mark-next-like-this)
+   (global-set-key [(hyper <)] 'mc/mark-previous-like-this)
+
+   ;Ivy
+   (global-set-key (kbd "H-b") 'ivy-switch-buffer)
+
+   ;Avy
+   (global-set-key (kbd "H-e") 'avy-goto-char-2)
+   
+   ;swiper
+   (global-set-key (kbd "H-t") 'swiper)
+
+   ;;custom functions
+   (global-set-key [(hyper u)] 'comment-or-uncomment-region-or-line)
+   (global-set-key (kbd "H-[") 'config-edit)
+   (global-set-key (kbd "H-]") 'config-reload)
+      
+   ;;windows
+   (global-set-key (kbd "H-m") 'split-and-follow-horizontal)
+   (global-set-key (kbd "H-k") 'split-and-follow-vertical)
+
+   (global-set-key (kbd "H-,") 'delete-window)
+   (global-set-key (kbd "H-.") 'delete-other-window)
+   
+   (global-set-key (kbd "H-o") 'switch-window)
+   
+   ;;UNBIND MAC SYS SHORTCUTS
+
+   ;highlight key
+   (global-set-key [(hyper h)] 'set-mark-command)
+
+ #+END_SRC
+ 
+* Functions
+** mac-switch-meta
+#+begin_SRC emacs-lisp
+
+  ;; mac switch meta key
+  (defun mac-swich-meta nil
+    ;; "switch meta between Option and Command"
+    (interactive)
+    (if (eq mac-option-modifier nil)
+        (progn
+          (setq mac-option-modifier 'meta)
+          (setq mac-command-modifier 'hyper)
+          )
+      (progn
+        (setq mac-option-modifier nil)
+        (setq mac-command-modifier 'meta)
+        )
+      )
+    )
+
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'hyper)
+ #+End_SRC
+** comment or uncomment
+#+BEGIN_SRC emacs-lisp
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)
+        (next-line)))
+
+#+END_SRC
+
+** config edit
+#+BEGIN_SRC emacs-lisp
+  (defun config-edit ()
+    (interactive)
+    (find-file "~/.emacs.d/config.org"))
+#+END_SRC
+** config reload
+#+BEGIN_SRC emacs-lisp
+  (defun config-reload ()
+    (interactive)
+    (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+
+#+END_SRC
+** split and follow
+*** horiz
+#+BEGIN_SRC emacs-lisp
+  (defun split-and-follow-horizontal ()
+    (interactive)
+    (split-window-below)
+    (balance-window)
+    (other-window 1))
+#+END_SRC
+*** vert
+#+BEGIN_SRC emacs-lisp
+  (defun split-and-follow-vertical ()
+    (interactive)
+    (split-window-right)
+    (balance-window)
+    (other-window 1))
+#+END_SRC
+* General Sh!t
+** Theme
+#+BEGIN_SRC emacs-lisp 
+(add-to-list 'custom-theme-load-path' "~/.emacs.d/themes")
+(load-theme 'dracula t)
+#+END_SRC
+** QOL One Liners
+#+begin_SRC emacs-lisp
+(setq inhibit-startup-message t)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+(global-display-line-numbers-mode)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(winner-mode 1)
+
+(setq scroll-conservatively 100)
+(setq ring-bell-function 'ignore)
+
+(when window-system (global-hl-line-mode t ))
+
+(server-start)
+
+(setq auto-save-file-name-transforms
+    `((".*" "~/.emacs-saves/" t)))
+
+(setq backup-directory-alist
+    `(("." . ,(concat user-emacs-directory "backups"))))
+
+
+#+END_SRC
+
+** Display
+*** Window Size
+#+BEGIN_SRC emacs-lisp
+  (setq default-frame-alist
+        '(
+          (left . 0) 
+          (width . 141) 
+          (fullscreen . fullheight)))
+#+END_SRC
+*** Font
+#+BEGIN_SRC emacs-lisp
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "Input Mono"
+                    :height 150
+                    :width 'normal
+                    )
+
+#+END_SRC
+** Terminal Change
+#+BEGIN_SRC emacs-lisp
+  (defvar my-terminal-shell "/bin/bash")
+  (defadvice ansi-term (before force-bash)
+    (interactive (list my-terminal-shell)))
+  (ad-activate 'ansi-term)
+#+END_SRC
+* Packages
+** Auto-complete buffers/files
+#+BEGIN_SRC emacs-lisp
+(setq indo-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+#+END_SRC
+
+** Avy
+#+BEGIN_SRC emacs-lisp
+;;buffer navigation
+(use-package avy
+  :ensure t
+  :bind ("H-e" . avy-goto-char))
+#+END_SRC
+** Beacon
+#+BEGIN_SRC emacs-lisp
+(use-package beacon
+  :ensure t
+  :init
+  (beacon-mode 1))
+#+END_SRC
+
+** Flycheck
+syntax checker
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t))
+
+#+END_SRC
+
+** Ivy
+#+BEGIN_SRC emacs-lisp
+;;autocompleete
+;;Buffer Sh!t
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode)
+  :config
+  (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-display-style 'fancy))
+#+END_SRC
+** IDO
+#+BEGIN_SRC emacs-lisp
+  (setq ido-enable-flex-matching t)
+  ;;(setq ido-create-new-buffer 'always)
+  (setq ido-everywhere t)
+
+(defalias 'list-buffers 'ibuffer)
+#+END_SRC
+
+** Multi Cursors
+#+BEGIN_SRC emacs-lisp
+(use-package multiple-cursors
+    :ensure t)
+
+(require 'multiple-cursors)
+
+#+END_SRC
+
+** Org mode
+#+BEGIN_SRC emacs-lisp
+  ;; Org-mode settings
+  (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+  (global-set-key "\C-cl" 'org-store-link)
+  (global-set-key "\C-ca" 'org-agenda)
+  (global-font-lock-mode 1)
+#+END_SRC
+** Org-bullets
+#+BEGIN_SRC emacs-lisp
+  ;;nicer bullets
+  (use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullet-mode 1))))
+
+  ;;global keys
+  (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  ;;(global-set-key "\C-cl" 'org-store-link)
+  ;;(global-set-key "\C-ca" 'org-agenda)
+
+#+END_SRC
+** Rainbow
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-mode
+    :ensure t
+    :init
+    (rainbow-mode 1))
+#+END_SRC
+
+** SmartParens
++BEEGIN_SRC emacs-lisp
+;;easy parentesis
+
+(use-package smartparens
+
+:ensure t
+:config
+(require 'smartparens-config)
+(smartparens-global-mode t)
+(show-smartparens-global-mode t))
+
+;;remove smartP from '
+;;(sp-pair "'" nil :actions :rem)
+
++END_SRC
+** Smex
+#+BEGIN_SRC emacs-lisp
+  (use-package smex
+    :ensure t
+    :init (smex-initialize)
+    :bind ("M-x" . smex))
+
+#+END_SRC
+** Switch Window
+#+BEGIN_SRC emacs-lisp
+  (use-package switch-window
+    :ensure t
+    :config
+    (setq switch-window-input-style 'minibuffer)
+    (setq switch-window-increase 4)
+    (setq switch-window-threshold 2)
+    (setq switch-window-shortcut-style 'qwerty)
+    (setq switch-window-qwerty-shortcuts
+          '("t" "s" "r" "a" "z"))
+    :bind
+    ([remap other-window] . switch-window))
+#+END_SRC
+** Swiper
+#+BEGIN_SRC emacs-lisp
+  (use-package swiper
+    :ensure t)
+   ;; :bind ("H-t" . swiper))
+#+END_SRC
+** Try
+#+BEGIN_SRC emacs-lisp
+(use-package try
+    :ensure t)
+#+END_SRC
+
+** Which Key
+#+BEGIN_SRC emacs-lisp
+;;what combinations are possbible
+(use-package which-key
+ :ensure t
+ :config
+ (which-key-mode))
+#+END_SRC
+** Yasnippet
+#+BEGIN_SRC emacs-lisp
+  (use-package yasnippet
+    :ensure t
+    :config
+    (use-package yasnippet-snippets
+      :ensure t)
+    (yas-reload-all))
+#+END_SRC

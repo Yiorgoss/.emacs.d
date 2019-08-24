@@ -1,0 +1,44 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/squanchy2/" . ".emacs.bak/")
+ ("/Users/" . "squanchy2/")
+ ("/" . "Users/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/squanchy2/journal/"
+ "/Users/squanchy2/"
+ "/Users/squanchy2/.emacs.bak/"
+ "/Users/squanchy2/.emacs.d/"
+ "/Users/squanchy2/bin/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "goals.org"
+ ".bash_profile"
+ "config.org"
+ "init.el"
+ "emacs_cli_start.sh"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/squanchy2/journal/" (23838 19246 893767 82000) "TOPICS" "lack_of_trust_13_2_19" "coconut_oil_revelation_7_3_19" "Journal.org" "recurring_thoughts_10_2_19" ".#July_4.org" "fish_oil_insomnia_24_1_19" ".#Journal.org" "mental_state_8_2_19" "short_story" "goals.org" "../" "./")
+
+ ("/Users/squanchy2/.emacs.d/" (23838 15605 973130 630000) "backups/" "themes/" "elpa/" "recentf" "init.el" "auto-save-list/" "config.el" "config.org" "smex-items" "ido.last" "snippets/" "../" "./")
+
+ ("/Users/squanchy2/" (23838 13293 215390 589000) ".conda/" ".viminfo" ".bash_history" ".aws/" ".cache/" ".python_history" "Downloads/" "anaconda3/" ".emacs.bak/" ".bash_profile" ".antigen/" ".rstudio-desktop/" "py_v_envs/" "Documents/" ".npm/" ".keras/" ".jupyter/" ".Trash/" "pdfs/" ".profile" "Applications/" ".vimrc" "Movies/" ".ssh/" ".anaconda/" "antigen.zsh" "package-lock.json" ".bash_profile-anaconda3.bak" "Public/" ".zshrc.zwc" ".bash_sessions/" ".node_repl_history" "AgenaRisk/" ".emacs.d/" ".oracle_jre_usage/" ".lesshst" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" "code/" ".saves/" ".atom/" ".pylint.d/" "Pictures/" ".zshrc" "distro/" ".bashrc" ".subversion/" "bin/" ".yolk/" ".CFUserTextEncoding" ".DS_Store" "PATH.txt" "#PATH.txt#" ".vim/" "unishit/" ".condarc" "Music/" ".config/" ".Rhistory" ".emacs-saves/" "journal/" "../" "./")
+
+ ("/Users/squanchy2/.emacs.bak/" (23835 11329 828165 472000) "themes/" ".git/" "elpa/" "init.el" "auto-save-list/" "config.el" "ido.last~" "config.org" "ido.last" "snippets/" "ac-comphist.dat" "../" "./")
+
+ ("/Users/squanchy2/bin/" (23834 60119 729274 133000) "ec2_with_vol.sh" "ekill.sh" "emacs_cli_start.sh" "../" "./")
+
+ ("/Users/" (23599 28631 961660 31000) "squanchy2/" "Guest/" "Shared/" ".localized" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

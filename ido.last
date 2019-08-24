@@ -1,0 +1,54 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/squanchy2/code/final_year_project/" . "ml_forecast/")
+ ("/Users/squanchy2/code/" . "final_year_project/")
+ ("/Users/squanchy2/" . "code/")
+ ("/Users/" . "squanchy2/")
+ ("/" . "Users/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/squanchy2/code/final_year_project/"
+ "/Users/squanchy2/journal/"
+ "/Users/squanchy2/"
+ "/Users/squanchy2/.emacs.bak/"
+ "/Users/squanchy2/.emacs.d/"
+ "/Users/squanchy2/bin/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "ml_forecast.py"
+ "goals.org"
+ ".bash_profile"
+ "config.org"
+ "init.el"
+ "emacs_cli_start.sh"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/squanchy2/code/final_year_project/" (23848 16935 281711 688000) "ml_forecast.py" "ml_forecast/" "test/" "../" "./")
+
+ ("/Users/squanchy2/code/final_year_project/ml_forecast/" (23848 13706 104609 76000) "../" "./")
+
+ ("/Users/squanchy2/code/" (23845 34659 755398 986000) "ctci/" "Sec_Eng_Lab_Week9_Authorization_Memory.pdf" "final_year_project/" "ltsm-test/" "use_password/" "fyp_v1/" "cool/" ".gitignore" "git_cheatsheet" "java/" "r/" "datasets/" "antlr/" "ml_forecast/" "APIUE/" ".DS_Store" "sec_Eng/" "../" "./")
+
+ ("/Users/squanchy2/.emacs.d/" (23848 14258 546535 709000) "backups/" "themes/" "elpa/" "recentf" ".#config.org" "init.el" "auto-save-list/" "config.el" "config.org" "smex-items" "ido.last" "snippets/" "../" "./")
+
+ ("/Users/squanchy2/journal/" (23845 34422 9334 429000) "TOPICS" "lack_of_trust_13_2_19" "coconut_oil_revelation_7_3_19" "Journal.org" "recurring_thoughts_10_2_19" "fish_oil_insomnia_24_1_19" "July_4.org" "mental_state_8_2_19" "short_story" "goals.org" "../" "./")
+
+ ("/Users/squanchy2/" (23838 13293 215390 589000) ".conda/" ".viminfo" ".bash_history" ".aws/" ".cache/" ".python_history" "Downloads/" "anaconda3/" ".emacs.bak/" ".bash_profile" ".antigen/" ".rstudio-desktop/" "py_v_envs/" "Documents/" ".npm/" ".keras/" ".jupyter/" ".Trash/" "pdfs/" ".profile" "Applications/" ".vimrc" "Movies/" ".ssh/" ".anaconda/" "antigen.zsh" "package-lock.json" ".bash_profile-anaconda3.bak" "Public/" ".zshrc.zwc" ".bash_sessions/" ".node_repl_history" "AgenaRisk/" ".emacs.d/" ".oracle_jre_usage/" ".lesshst" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" "code/" ".saves/" ".atom/" ".pylint.d/" "Pictures/" ".zshrc" "distro/" ".bashrc" ".subversion/" "bin/" ".yolk/" ".CFUserTextEncoding" ".DS_Store" "PATH.txt" "#PATH.txt#" ".vim/" "unishit/" ".condarc" "Music/" ".config/" ".Rhistory" ".emacs-saves/" "journal/" "../" "./")
+
+ ("/Users/squanchy2/.emacs.bak/" (23835 11329 828165 472000) "themes/" ".git/" "elpa/" "init.el" "auto-save-list/" "config.el" "ido.last~" "config.org" "ido.last" "snippets/" "ac-comphist.dat" "../" "./")
+
+ ("/Users/squanchy2/bin/" (23834 60119 729274 133000) "ec2_with_vol.sh" "ekill.sh" "emacs_cli_start.sh" "../" "./")
+
+ ("/Users/" (23599 28631 961660 31000) "squanchy2/" "Guest/" "Shared/" ".localized" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

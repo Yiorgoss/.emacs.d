@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+
+
+def import_concat_data(path, f_type='.us.txt'):
+    #merge data into one df and save
+    files = glob.glob(path+"*"+f_type)
+
+    dates = pd.read_csv("../datasets/stocks_etfs/Stocks/aapl.us.txt",
+                            skiprows=1, usecols=[0])[-1:-5060:-1]
+    dates = pd.to_datetime(dates.stack(), format='%Y-%m-%d').unstack()
+    dates.columns = ['date']
+    dates.index = pd.RangeIndex(len(dates.index))
+
+    data = list()
+    data.append(dates)
+    for f in files:
+        #read each file, header name = ticker name, then append to dataframelist
+        #only keep the final 5060 rows = last 15 years of trading days
+        temp = pd.read_csv( f, usecols=[4], skiprows=1,
+                            names=[f.split("/")[2].split(".")[0]])[-1:-5060:-1]
+        temp.index = pd.RangeIndex(len(temp.index))
+
+        if(len(temp.dropna()) < 100):
+            continue
+
+        data.append(temp)
+    df = pd.concat(data, axis=1)
+    df.to_csv("data/output/single_df.csv", sep=",")
+
