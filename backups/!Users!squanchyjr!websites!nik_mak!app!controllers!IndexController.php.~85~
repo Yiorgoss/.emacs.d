@@ -1,0 +1,57 @@
+<?php
+
+class IndexController extends ControllerBase
+{
+
+    public function indexAction()
+    {
+        $this->assets->addCss('css/index.css');
+
+        $this->assets->addJs('js/index.js');
+
+    }
+    public function allAction(){
+        $this->view->disable();
+        
+        if ($this->request->isAjax()){
+            $all = $this->modelsManager->executeQuery(
+                'SELECT dir_name, id, ext from Blogs'
+            );
+            return json_encode($all);
+        }
+        
+    }
+    public function modellingAction(){
+        // $this->view->disable();
+
+        // if ($this->request->isAjax()) {
+            $tmp = $this->modelsManager->executeQuery(
+                'SELECT dir_name, id, ext FROM Blogs WHERE tag_id = "3d_modelling"'
+            );
+            echo json_encode($tmp);
+            return json_encode($tmp);
+        // }
+    }
+    public function eventIntAction(){
+        $this->view->disable();
+
+        if ($this->request->isAjax()) {
+            $tmp = $this->modelsManager->executeQuery(
+                'SELECT dir_name, id, ext FROM Blogs WHERE tag = "event_interaction"'
+            );
+            return json_encode($tmp);
+        }
+    }
+    public function realtimeAction(){
+        $this->view->disable();
+        
+        if ($this->request->isAjax()) {
+            $tmp = $this->modelsManager->executeQuery(
+                'SELECT dir_name, id, ext FROM Blogs WHERE tag_id = "real_time"'
+            );
+            return json_encode($tmp);
+        }
+    }
+}
+
+

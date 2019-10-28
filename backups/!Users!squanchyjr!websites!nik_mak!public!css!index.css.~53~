@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+.container {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.header {
+  width: 80%;
+  margin: 0 auto;
+  background: transparent;
+  padding: 20px 0;
+}
+.header ul {
+  list-style: none;
+  text-align: center;
+}
+.header ul li {
+    display: inline-block;
+    background-color: transparent;
+}
+.header ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+  color: black;
+  transition: all .5s;
+  position:relative;
+  z-index: 1;
+}
+.header ul li a:before {
+    transition: all .5s;
+}
+.header ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: black;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  transition: all .5s;
+}
+.header ul li a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+.header ul li a:hover {
+    color: white;
+    z-index: 10;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-transition: all .2s ease; 
+    transition: all .2s ease;
+    vertical-align: middle;
+}
+img:hover {
+     opacity: 0.8;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.head_container {
+    height: 100vh;
+    width: 100vw;
+    
+}
+#bio {
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    width: 30%;
+}
+#bio ul {
+    text-align: center;
+}
+#bio ul li{
+    list-style-type: none;
+    display: static;
+    color: black;
+    background-color: transparent;
+    font-weight: 900;
+}
+.pic_container {
+    padding: 0;
+    margin-top: 100vh;
+    width: 100%;
+    left: 0;
+    position: absolute;
+}
+.pictures {
+    left: 0;
+    width: 100vw;
+    height: 110vh;
+    background-color: white;
+}
+.row1 {
+    height: 57%;
+    width: 100vw;
+}
+.row2 {
+    height: 43%;
+    width: 100vw;
+    /*overflow: hidden;*/
+}
+.main {
+    width: 65%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+.smalls {
+    width: 35%;
+    height: 100%;
+    overflow: hidden;
+}
+.up, .down {
+    height: 50%;
+    left: 60%;
+    overflow: hidden;
+}
+.left {
+    width: 50%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+.right {
+    display: inline;
+    float: right;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Nikolas Makridakis</title>
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->url->get('img/favicon.ico')?>"/>
+    </head>
+    <body>
+	<script
+	    src="https://code.jquery.com/jquery-3.4.1.min.js"
+	    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.css" integrity="sha256-MHZlm8KTLRxClmwQTYIfJEVbcRx1VIgfZJjaBOGCDoc=" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js" integrity="sha256-Lw96aZrbaAuj9vBh9haoZrkYmRA9Rbkv4K6C8LonvBk=" crossorigin="anonymous"></script>
+        <div class="container" id="fullpage">
+            <?php echo $this->getContent(); ?>
+        </div>	
+    </body>
+</html>

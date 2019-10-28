@@ -1,0 +1,13 @@
+<?php
+
+use Phalcon\Mvc\Models;
+
+class Posts extends Model
+{
+    public $id;
+
+    public $description;
+
+    public $video_id;
+}
+?>

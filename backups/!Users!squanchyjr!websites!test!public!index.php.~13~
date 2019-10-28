@@ -1,0 +1,52 @@
+<?php
+
+use Phalcon\Config\Adapter\Ini as ConfigIni;
+use Phalcon\Mvc\Application;
+use Phalcon\Di\FactoryDefault;
+
+
+define('APP_PATH', realpath('..') . '/');
+// ...
+
+// Read the configuration
+$config = new ConfigIni(
+    APP_PATH . 'app/config/config.ini'
+);
+
+/**
+ * Auto-loader configuration
+ */
+require APP_PATH . 'app/config/loader.php';
+
+/**
+ * Load application services
+ */
+// require APP_PATH . 'app/config/services.php';
+
+ // $application = new Application(
+ //        new Services($config)
+ //    );
+
+$di = new FactoryDefault();
+
+$di->set(
+    'url',
+    function () use ($config) {
+        $url = new UrlProvider();
+
+        $url->setBaseUri(
+            $config->application->baseUri
+        );
+
+        return $url;
+    }
+);
+/**
+ * The URL component is used to generate all kind of URLs in the application
+ */
+$application = new Application($di);
+
+$response = $application->handle();
+
+
+$response->send();

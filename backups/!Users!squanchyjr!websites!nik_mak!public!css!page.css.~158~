@@ -1,0 +1,19 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.title {
+    text-align: center;
+}
+.desc {
+    text-align: center;
+    
+}
+img {
+    width: 90%;
+    padding-left: 5%;
+    padding-top: 5%;
+    float: left;
+}
+

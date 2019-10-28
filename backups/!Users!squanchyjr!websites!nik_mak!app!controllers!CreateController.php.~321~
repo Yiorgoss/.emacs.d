@@ -1,0 +1,119 @@
+<?php
+
+class CreateController extends ControllerBase {
+    public function indexAction(){
+        if( !$this->session->get('auth')){
+            $this->response->redirect('login');
+        } 
+    }
+    public function validAction(){
+        if( !$this->session->get('auth')){
+            return $this->response->redirect('login');
+        }
+        if( $this->request->isPost()){
+            $err_bool = false;
+            
+            $title = $_POST['title'];
+            $desc = $_POST['description'];
+            $tag = $_POST['tag'];
+            $allowedExts = array("jpg", "jpeg", "png");
+
+            $dir_name = str_replace(' ', '', $title); // save dir name
+            
+            // minimum requirements for database creation
+            // title, tag, description, thumbnail
+            if(empty($title)){
+                $this->flashSession->error('The "Title" field cannot be empty');
+                $err_bool = true;
+            }
+            if(empty($desc)){
+                $this->flashSession->error('The "Description" field cannot be empty');
+                $err_bool = true;
+            }
+            if($tag == 'forgot'){
+                $this->flashSession->error('You forgot to specify a tag');
+                $err_bool = true;
+            }
+            if(!file_exists($_FILES['thumbnail']['tmp_name'])){
+                $this->flashSession->error('The "Thumbnail" cannot be empty');
+                $err_bool = true;
+            }
+            $ext_thumb = explode(".", $_FILES['thumbnail']['name']);
+            $ext_thumb = end($ext_thumb);
+            if(in_array($ext_thumb, $allowedExts) != 1){
+                $this->flashSession->error('The "Thumbnail" has the wrong extension');
+                $err_bool = true;
+            }
+            if($err_bool){
+                return $this->response->redirect('create');
+            }
+            if(file_exists('img/'. $dir_name)){
+                $this->flashSession->error('There was a problem with the title, it must already exist');
+                return $this->response->redirect('create');
+            }
+
+            // create thumbnail directory and thumbnail
+            mkdir('img/'. $dir_name);
+            $ext = explode(".", $_FILES['thumbnail']['name']);
+            $ext = end($ext);
+            $image = new \Phalcon\IMage\Adapter\Gd( $_FILES['thumbnail']['tmp_name']);
+            $image->save('img/'. $dir_name .'/'. $dir_name . '_thumbnail.' . $ext);
+
+            echo "ABC";
+            if(file_exists($_FILES['upload']['tmp_name'][0])){
+
+                for( $i=0; $i<count($_FILES['upload']['name']); $i++){
+                    $ext = explode(".", $_FILES['upload']['name'][$i]);
+                    $ext = end($ext);
+
+                    if(in_array($ext, $allowedExts)){
+                        $image = new \Phalcon\Image\Adapter\Gd( $_FILES['upload']['tmp_name'][$i]);
+                        $image->save('img/'. $dir_name .'/'. $dir_name . $i .'.'. $ext);
+                    }
+                }
+            }
+            ////////////////////
+            // DATABASE STUFF //
+            ////////////////////
+            
+            // create the posts database entry
+            echo "BBB";
+            $vid_id = NULL;
+            $sql_post = $this->modelsManager->createQuery(
+                'INSERT INTO posts(title, description, video_id) VALUES (:title:, :desc:, :video_id:)'
+            );
+            $sql_post->execute(
+                [
+                    'title' => $title,
+                    'desc' => $desc,
+                    'video_id' => $vid_id,
+                ]
+            );
+
+            //find post id that was just created
+            $post_id = $this->modelsManager->createQuery(
+                'SELECT id from Posts WHERE title = :title:'
+            );
+            $post_id = $post_id->execute(
+                [
+                    'title' => $title,
+                ]
+            )[0]['id'];
+            
+            $sql_blog = $this->modelsManager->createQuery(
+                'INSERT INTO blogs(dir_name, ext, tag_id, post_id) VALUES (:dir_name:, :ext:, :tag:, :post_id:)'
+            );
+            
+            $sql_blog->execute(
+               [
+                   'dir_name' => $dir_name,
+                   'ext' => $ext,
+                   'tag' => $tag,
+                   'post_id' => $post_id,
+               ]
+            );
+        }
+        $this->flashSession->success("File successfully created");
+        return $this->response->redirect('create');
+    }
+}

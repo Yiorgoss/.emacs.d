@@ -1,0 +1,8 @@
+<?php $this->assets->outputCss(); ?>
+
+<div class="login_container">
+    <form class="form_login" action="login/valid" method="post">
+	<input class="password-input" type="text" name="password" placeholder="Enter Password"></br>
+	<input class="submit-input" type="submit" value="Submit">
+    </form>
+</div>

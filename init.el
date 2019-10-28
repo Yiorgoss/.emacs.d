@@ -31,7 +31,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet yasnippets swiper 0blayout rainbow-mode switch-window smex ido-vertical-mode dracula-theme avy which-key use-package try smartparens org-bullets ordinal multiple-cursors ivy flycheck))))
+    (multi-web-mode web-mode php-mode yasnippet-snippets yasnippet yasnippets swiper 0blayout rainbow-mode switch-window smex ido-vertical-mode dracula-theme avy which-key use-package try smartparens org-bullets ordinal multiple-cursors ivy flycheck))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

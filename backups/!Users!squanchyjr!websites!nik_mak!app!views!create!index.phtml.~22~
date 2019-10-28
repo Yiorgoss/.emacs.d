@@ -1,0 +1,18 @@
+<?php $this->assets->outputCss(); ?>
+
+<div class="create_container">
+    <div class='alert alert-danger'><?php $this->flashSession->output(); ?></div>
+    <form class="form_create" action="create/valid" method="post" >
+	<input type="text" name="title" placeholder="Title"></br>
+	<textarea name="description" placeholder="Enter a Description"></textarea></br>
+	<select name="tag">
+	    <option value="tag">Pick a Tag</option>
+	    <option value="3d_modelling">3D Modelling</option>
+	    <option value="event_interation">Event & Interaction</option>
+	    <option value="real_time">Real Time</option>
+	</select></br>
+	<input type="file" name="thumbnail"><br>
+	<input type="file" name="files[]" multiple><br>
+	<input type="submit" name="submit" value="Upload"><br>
+    </form>
+</div>

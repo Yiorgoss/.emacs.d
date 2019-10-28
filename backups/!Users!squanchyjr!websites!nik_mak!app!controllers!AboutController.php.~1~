@@ -1,0 +1,9 @@
+<?php
+
+class AboutController extends ControllerBase
+{
+    public function indexAction()
+    {
+        $this->assest->addCs('css/about.css');
+    }
+}

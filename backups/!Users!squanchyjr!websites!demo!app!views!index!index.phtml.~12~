@@ -1,0 +1,12 @@
+<div class="page-header">
+    <h1>Congratulations!</h1>
+</div>
+
+<p>You're now flying with Phalcon. Great things are about to happen!</p>
+
+<?php foreach ($entries as $item) { ?>
+    <tr>
+        <td><a href=<?php echo '/demo/aaa/' . $item->id ?>> <?php echo $item->id; ?></a></td>
+        <td><a href="/demo"> <?php echo $item->text; ?></a></td>
+    </tr>
+<?php } ?>

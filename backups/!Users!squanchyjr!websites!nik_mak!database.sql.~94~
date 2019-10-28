@@ -1,0 +1,70 @@
+drop database nik_mak;
+create database if not exists `nik_mak`;
+
+use `nik_mak`;
+
+-- create table if not exists `tags` (
+--        `id` int(11) not null auto_increment,
+--        `tag` varchar(255),
+--        primary key (`id`)
+-- );
+
+create table `videos` (
+       `id` int(11) not null auto_increment,
+       `filepath` varchar(255) not null,
+       `ext` varchar(255) not null,
+       primary key(`id`)
+);
+
+create table `posts` (
+       `id` int(11) not null auto_increment,
+       `title` varchar(255) not null,
+       `description` text not null,
+       `video_id` int(11),
+       primary key(`id`),
+       foreign key(`video_id`) references `videos`(`id`)
+);
+
+create table `blogs` (
+       `id` int(11) not null auto_increment,
+       `dir_name` varchar(255) not null,
+       `date_created` timestamp default current_timestamp,
+       `view_count` int(11) default 0,
+       `ext` varchar(255) not null,
+       `tag` varchar(255) not null,
+       `post_id` int(11) not null,
+       primary key(`id`),
+       foreign key(`tag_id`) references `tags`(`id`),
+       foreign key(`post_id`) references `posts`(`id`)
+);
+
+create table `users` (
+       `id` int(11) not null auto_increment,
+       `hash` text,
+       primary key(`id`)
+);
+
+-- insert into `tags`(`tag`)
+--        values	('3D Modelling'),
+--        		('Event and Interaction'),
+--        	      	('Real Time');
+
+-- INSERT INTO `posts`(description)
+--        VALUES ('text text text text text');
+    
+-- INSERT INTO `blogs`(`title`, `ext`, `tag_id`, `post_id`)
+--        VALUES ('title1', 'jpg',
+--        (SELECT id from `tags` where `tag` = 'Real Time'),
+--        (SELECT id from `posts` where `id` = LAST_INSERT_ID()));
+       
+-- insert into `blogs` (`title`, `tag_id`, `ext`, `post_id`) values
+--        ("Terragen_Mountains", 1, "jpg", 1),
+--        ("Gilmore_Wallpaper", 1, "jpg", 2),
+--        ("file", 3, "jpeg", 3),
+--        ("sunrise", 2, "jpg", 4),
+--        ("pic_1", 2, "jpg", 5),
+--        ("pic_2", 2, "jpg", 6),
+--        ("pic_3", 2, "png", 7),
+--        ("pic_4", 2, "jpg", 8),
+--        ("pic_5", 2, "jpg", 9),
+--        ("pic_6", 2, "jpg")

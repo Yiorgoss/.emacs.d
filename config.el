@@ -12,7 +12,6 @@
 ;;emacs terminal
 (global-set-key (kbd "H-;") 'eshell)
 
-
 ;;multiple-cursors
 (global-set-key [(hyper >)] 'mc/mark-next-like-this)
 (global-set-key [(hyper <)] 'mc/mark-previous-like-this)
@@ -27,9 +26,12 @@
 (global-set-key (kbd "H-t") 'swiper)
 
 ;;custom functions
-(global-set-key [(hyper u)] 'comment-or-uncomment-region-or-line)
+(global-set-key [(hyper /)] 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "H-[") 'config-edit)
 (global-set-key (kbd "H-]") 'config-reload)
+
+;;find_file rebind
+(global-set-key [(hyper f)] 'find-file-other-window)
 
 ;;windows
 (global-set-key (kbd "H-m") 'split-and-follow-horizontal)
@@ -97,6 +99,101 @@
 (add-to-list 'custom-theme-load-path' "~/.emacs.d/themes")
 (load-theme 'dracula t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; backup settings                                                        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; https://www.emacswiki.org/emacs/BackupFiles
+(setq
+ backup-by-copying t     ; don't clobber symlinks
+ kept-new-versions 10    ; keep 10 latest versions
+ kept-old-versions 0     ; don't bother with old versions
+ delete-old-versions t   ; don't ask about deleting old versions
+ version-control t       ; number backups
+ vc-make-backup-files t) ; backup version controlled files
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; backup every save                                                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; http://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
+;; https://www.emacswiki.org/emacs/backup-each-save.el
+(defvar bjm/backup-file-size-limit (* 5 1024 1024)
+  "Maximum size of a file (in bytes) that should be copied at each savepoint.
+
+If a file is greater than this size, don't make a backup of it.
+Default is 5 MB")
+
+(defvar bjm/backup-location (expand-file-name "~/emacs-backups")
+  "Base directory for backup files.")
+
+(defvar bjm/backup-trash-dir (expand-file-name "~/.Trash")
+  "Directory for unwanted backups.")
+
+(defvar bjm/backup-exclude-regexp "\\[Gmail\\]"
+  "Don't back up files matching this regexp.
+
+Files whose full name matches this regexp are backed up to `bjm/backup-trash-dir'. Set to nil to disable this.")
+
+;; Default and per-save backups go here:
+;; N.B. backtick and comma allow evaluation of expression
+;; when forming list
+(setq backup-directory-alist
+      `(("" . ,(expand-file-name "per-save" bjm/backup-location))))
+
+;; add trash dir if needed
+(if bjm/backup-exclude-regexp
+    (add-to-list 'backup-directory-alist `(,bjm/backup-exclude-regexp . ,bjm/backup-trash-dir)))
+
+(defun bjm/backup-every-save ()
+  "Backup files every time they are saved.
+
+Files are backed up to `bjm/backup-location' in subdirectories \"per-session\" once per Emacs session, and \"per-save\" every time a file is saved.
+
+Files whose names match the REGEXP in `bjm/backup-exclude-regexp' are copied to `bjm/backup-trash-dir' instead of the normal backup directory.
+
+Files larger than `bjm/backup-file-size-limit' are not backed up."
+
+  ;; Make a special "per session" backup at the first save of each
+  ;; emacs session.
+  (when (not buffer-backed-up)
+    ;;
+    ;; Override the default parameters for per-session backups.
+    ;;
+    (let ((backup-directory-alist
+           `(("." . ,(expand-file-name "per-session" bjm/backup-location))))
+          (kept-new-versions 3))
+      ;;
+      ;; add trash dir if needed
+      ;;
+      (if bjm/backup-exclude-regexp
+          (add-to-list
+           'backup-directory-alist
+           `(,bjm/backup-exclude-regexp . ,bjm/backup-trash-dir)))
+      ;;
+      ;; is file too large?
+      ;;
+      (if (<= (buffer-size) bjm/backup-file-size-limit)
+          (progn
+            (message "Made per session backup of %s" (buffer-name))
+            (backup-buffer))
+        (message "WARNING: File %s too large to backup - increase value of bjm/backup-file-size-limit" (buffer-name)))))
+  ;;
+  ;; Make a "per save" backup on each save.  The first save results in
+  ;; both a per-session and a per-save backup, to keep the numbering
+  ;; of per-save backups consistent.
+  ;;
+  (let ((buffer-backed-up nil))
+    ;;
+    ;; is file too large?
+    ;;
+    (if (<= (buffer-size) bjm/backup-file-size-limit)
+        (progn
+          (message "Made per save backup of %s" (buffer-name))
+          (backup-buffer))
+      (message "WARNING: File %s too large to backup - increase value of bjm/backup-file-size-limit" (buffer-name)))))
+
+;; add to save hook
+(add-hook 'before-save-hook 'bjm/backup-every-save)
+
 (setq inhibit-startup-message t)
 
 (menu-bar-mode -1)
@@ -121,6 +218,10 @@
 (setq backup-directory-alist
     `(("." . ,(concat user-emacs-directory "backups"))))
 
+;;control window split direction
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 (setq default-frame-alist
       '(
         (left . 0) 
@@ -139,7 +240,7 @@
   (interactive (list my-terminal-shell)))
 (ad-activate 'ansi-term)
 
-(setq indo-enable-flex-matching t)
+(setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
 
@@ -196,6 +297,8 @@
 ;;(global-set-key "\C-cl" 'org-store-link)
 ;;(global-set-key "\C-ca" 'org-agenda)
 
+(use-package php-mode :ensure t)
+
 (use-package rainbow-mode
   :ensure t
   :init
@@ -224,6 +327,21 @@
 
 (use-package try
     :ensure t)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(setq web-mode-engines-alist
+      '(("php"    . "\\.phtml\\'")
+        ("blade"  . "\\.blade\\."))
+)
 
 ;;what combinations are possbible
 (use-package which-key

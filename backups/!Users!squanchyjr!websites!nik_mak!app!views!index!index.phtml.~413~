@@ -1,0 +1,51 @@
+<?php $this->assets->outputCss(); ?>
+<?php $this->assets->outputJs(); ?>
+
+<!-- intro and bio -->
+<div class="head_container section">
+    <div class="header">
+	<ul>
+	    <li>
+		<a href="/nik_mak">Home</a>
+	    </li>
+	    <li>
+		<a id="modelling">3D Modelling</a>
+	    </li>
+	    <li>
+		<a id="eventInt">Event & Interaction</a>
+	    </li>
+	    <li>
+		<a id="realtime">Real Time</a>
+	    </li>
+	    <li>
+		<a id="contact" href="contact">Contact</a>
+	    </li>
+	    <li>
+		<a id="about" href="about">About</a>
+	    </li>
+	</ul>
+    </div>
+    <div id="bio">
+	<ul>
+	    <li>Nikolas Makridakis</li>
+	    <li>ABC</li>
+	    <li>test@test.com</li>
+	</ul>
+    </div>
+</div>
+
+<!-- thumbnails (js rendered) -->
+<!-- <div class="section"></div> -->
+<div class="pic_container section">
+    
+</div>
+
+<script type="text/javascript">
+ var myFullpage = new fullpage('#fullpage', {
+     licenseKey: '57CF6A31-39B7494A-93029721-AC49AEE3',
+     scrollOverflow: true,
+ });
+</script>
+ 
+
+

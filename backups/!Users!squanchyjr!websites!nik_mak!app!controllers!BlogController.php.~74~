@@ -1,0 +1,26 @@
+<?php
+// use Phalcon\Mvc\Model\Resultset\Simple;
+class BlogController extends ControllerBase
+{
+    public function indexAction()
+    {
+        $this->view->pick('blog/index');
+    }
+
+    public function pageAction($id)
+    {
+        $this->assets->addCss('css/page.css');
+        $this->assets->addCss('css/index.css');
+        $query = $this->modelsManager->createQuery(
+            'SELECT title FROM Blogs WHERE id = :id:'
+        );
+        $title =$query->execute(
+            [
+                'id' => $id,
+            ]
+        );
+        // echo $title->current;
+        $this->view->title = $title->jsonSerialize()[0]['title'];
+        $this->view->pick('blog/index');
+    }
+}

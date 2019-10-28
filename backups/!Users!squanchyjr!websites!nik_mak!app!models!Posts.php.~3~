@@ -1,0 +1,26 @@
+<?php
+
+use Phalcon\Mvc\Models;
+
+class Posts extends Model
+{
+    public $id;
+
+    public $description;
+
+    public $video_id;
+
+    public function initialize(){
+        $this->belongsTo(
+            'id',
+            'Blogs',
+            'post_id'
+        );
+        $this->hasOne(
+            'video_id',
+            'Videos',
+            'id'
+        );
+    }
+}
+?>

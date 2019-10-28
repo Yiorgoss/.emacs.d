@@ -1,0 +1,20 @@
+<?php
+
+$this->assets->outputCss();
+
+$php_dir = "../public/img/". $this->view->title ."/";
+$img_dir = "/nik_mak/public/img/". $this->view->title ."/";
+
+$files = glob($php_dir . "*");
+?>
+<div class="sidebar"> <h1> text </h1></div>
+<div class="image_container">
+    <?php 
+    foreach ($files as $file)
+    {
+	$file = explode("/", $file)[4];
+	echo "<img src=". $img_dir . $file  ." alt='Image not found'>";
+    }
+    ?>
+</div>
+    

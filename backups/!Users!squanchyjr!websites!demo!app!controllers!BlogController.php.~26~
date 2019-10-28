@@ -1,0 +1,19 @@
+<?php
+
+class BlogController extends ControllerBase
+{
+    public function indexAction()
+    {
+        $this->view->pick('blog/index');
+    }
+    public function aaaAction($id){
+        echo 'abbbb' . $id;
+        $query = $this->modelsManager->createQuery('SELECT * FROM Xxx WHERE id = :id:');
+        $cars  = $query->execute(
+            [
+                'id' => $id,
+            ]
+        );
+        $this->view->pick('blog/index');
+    }
+}

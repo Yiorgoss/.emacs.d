@@ -1,0 +1,234 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/squanchyjr/websites/nik_mak/public/" . "css/")
+ ("/Users/squanchyjr/" . "websites/")
+ ("/Users/squanchyjr/websites/demo/" . "app/")
+ ("/Users/squanchyjr/websites/nik_mak/app/views/" . "contact/")
+ ("/Users/squanchyjr/websites/nik_mak/" . "app/")
+ ("/Users/squanchyjr/websites/demo/app/views/" . "categories/")
+ ("/Users/squanchyjr/websites/demo/app/" . "controllers/")
+ ("/Users/squanchyjr/websites/invo/" . "public/")
+ ("/Users/squanchyjr/websites/invo/app/views/" . "products/")
+ ("/Users/squanchyjr/websites/invo/app/" . "views/")
+ ("/Users/squanchyjr/websites/tut_phalcon/app/" . "config/")
+ ("/Users/squanchyjr/websites/" . "nik_mak/")
+ ("/Users/squanchyjr/websites/test/" . "public/")
+ ("/Users/squanchyjr/websites/test/app/views/" . "session/")
+ ("/Users/squanchyjr/websites/test/app/" . "config/")
+ ("/Users/squanchyjr/websites/nik_mak/app/" . "controllers/")
+ ("/Users/squanchy2/code/final_year_project/" . "ml_forecast/")
+ ("/Users/squanchy2/code/" . "final_year_project/")
+ ("/Users/squanchy2/" . "code/")
+ ("/Users/" . "squanchy2/")
+ ("/" . "Users/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/squanchyjr/websites/nik_mak/app/views/about/"
+ "/Users/squanchyjr/websites/nik_mak/app/controllers/"
+ "/Users/squanchyjr/websites/nik_mak/app/views/contact/"
+ "/Users/squanchyjr/websites/nik_mak/app/forms/"
+ "/Users/squanchyjr/websites/nik_mak/app/config/"
+ "/Users/squanchyjr/websites/demo/app/config/"
+ "/Users/squanchyjr/websites/nik_mak/public/"
+ "/Users/squanchyjr/websites/nik_mak/app/views/"
+ "/Users/squanchyjr/websites/nik_mak/public/js/"
+ "/Users/squanchyjr/websites/"
+ "/Users/squanchyjr/websites/nik_mak/public/css/"
+ "/Users/squanchyjr/websites/nik_mak/"
+ "/Users/squanchyjr/"
+ "/Users/squanchyjr/websites/nik_mak/app/views/index/"
+ "/Users/squanchyjr/websites/nik_mak/app/models/"
+ "/Users/squanchyjr/websites/nik_mak/app/views/blog/"
+ "/Users/squanchyjr/websites/demo/app/views/blog/"
+ "/Users/squanchyjr/websites/demo/app/controllers/"
+ "/Users/squanchyjr/websites/demo/app/views/index/"
+ "/Users/squanchyjr/websites/demo/app/models/"
+ "/Users/squanchyjr/websites/demo/public/"
+ "/Users/squanchyjr/websites/demo/"
+ "/Users/squanchyjr/websites/invo/app/forms/"
+ "/Users/squanchyjr/websites/nik_mak/app/views/images/"
+ "/Users/squanchyjr/websites/demo/app/views/users/"
+ "/Users/squanchyjr/websites/demo/app/views/categories/"
+ "/Users/squanchyjr/websites/invo/app/models/"
+ "/Users/squanchyjr/websites/demo/app/views/"
+ "/Users/squanchyjr/websites/test/public/"
+ "/Users/squanchyjr/websites/test/app/views/"
+ "/Users/squanchyjr/websites/invo/app/views/"
+ "/Users/squanchyjr/websites/invo/app/views/session/"
+ "/Users/squanchyjr/websites/test/app/views/session/"
+ "/Users/squanchyjr/websites/test/app/controllers/"
+ "/Users/squanchyjr/websites/invo/public/"
+ "/Users/squanchyjr/websites/test/app/config/"
+ "/Users/squanchyjr/websites/invo/app/"
+ "/Users/squanchyjr/websites/invo/app/config/"
+ "/Users/squanchyjr/websites/test/app/views/index/"
+ "/Users/squanchyjr/websites/test/app/models/"
+ "/Users/squanchyjr/websites/invo/"
+ "/Users/squanchyjr/websites/invo/app/views/products/"
+ "/Users/squanchyjr/websites/invo/app/controllers/"
+ "/Users/squanchyjr/websites/invo/app/plugins/"
+ "/Users/squanchyjr/websites/tut_phalcon/app/controllers/"
+ "/Users/squanchyjr/websites/tut_phalcon/app/config/"
+ "/Users/squanchyjr/websites/resttest/"
+ "/Users/squanchyjr/websites/resttest/models/"
+ "/Users/squanchyjr/websites/test/"
+ "/Users/squanchyjr/websites/test/app/views/signup/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "index.phtml"
+ "AboutController.php"
+ "config.php"
+ "services.php"
+ "loader.php"
+ "index.php"
+ "ControllerBase.php"
+ "contactForm.php"
+ "IndexController.php"
+ "ContactController.php"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/squanchyjr/websites/invo/app/views/about/" (23914 19928 974978 98000) "index.volt" "../" "./")
+
+ ("/Users/squanchyjr/" (23963 12566 471925 445000) ".composer/" "backup.emacs/" ".zlogin" "websites/" "drac/" ".viminfo" ".bash_history" ".gitconfig" ".aws/" ".cache/" ".python_history" "Downloads/" ".oh-my-zsh/" ".Xauthority" "fonts/" "backup/" ".gem/" ".bash_profile" ".mono/" ".mysql_history" ".alias" ".rstudio-desktop/" "phalcon-devtools/" ".babel.json" "Documents/" "emacs-backups/" ".npm/" ".scala_history" "AWS/" ".Trash/" ".Rapp.history" "Dropbox/" ".zsh-update" ".profile" "Applications/" ".vimrc" "Movies/" ".ssh/" ".sh_history" "macports/" ".gittar/" "programming/" "package-lock.json" ".gitignore" ".dropbox/" "Public/" ".zcompdump-SquanchyJr’s MacBook Pro-5.3" "ps" ".bash_sessions/" "kill" ".android/" ".emacs.d/" ".zcompdump-SquanchyJr’s MacBook Pro-5.2" "Wallpapers/" ".IdentityService/" "Calibre Library/" ".gdbinit" ".oracle_jre_usage/" ".mkshrc" "BackUpFiles/" "Library/" "Desktop/" ".rvm/" ".ipython/" ".zsh_history" "KataWars/" ".nuget/" ".rnd" ".saves/" "node_modules/" ".atom/" "CryptoResearch/" "Resources/" ".pylint.d/" "Pictures/" ".NERDTreeBookmarks" ".local/" ".templateengine/" ".ServiceHub/" "org/" ".omnisharp/" ".zshrc" ".bashrc" ".subversion/" ".netrc" "bin/" ".CFUserTextEncoding" ".electrum/" ".DS_Store" ".vim/" ".virtualenvs/" "UniShit/" "Music/" ".config/" ".Rhistory" ".emacs-saves/" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/views/" (23963 12083 281541 331000) "index/" "layouts/" ".#index.phtml" "blog/" "index.phtml" "contact/" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/controllers/" (23963 12478 732467 313000) "IndexController.php" "ControllerBase.php" "BlogController.php" "ContactController.php" "AboutController.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/config/" (23963 2371 867761 238000) "router.php" "config.php" "services.php" "loader.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/config/" (23963 5837 133384 285000) "router.php" "config.php" "services.php" "loader.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/views/contact/" (23963 8050 24345 299000) "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/views/index/" (23963 10333 138391 553000) ".#index.phtml" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/forms/" (23962 64064 982567 210000) "contactForm.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/" (23962 63473 900020 591000) "vendor/" "composer.json" "resttest/" "error_message.html" "style.css" "img/" "abc.php" "elementor/" "nik_mak/" ".#style.css" "thank_you.html" "send_mail.php" "index.phtml" "invo/" "contact.html" "wordpress/" "test/" ".DS_Store" "index.html" "bro_website/" "composer.lock" "abc/" "info.php" "abc.html" "demo/" "elliot_little_dirt/" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/" (23962 51806 626431 976000) "views/" "controllers/" "models/" "library/" "config/" "forms/" "migrations/" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/views/blog/" (23961 44717 431572 990000) "index.phtml" "index.phml" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/" (23961 49608 316236 546000) ".htaccess" ".git/" "database.sql" ".gitignore" "public/" ".phalcon/" ".htrouter.php" "bak" "cache/" "app/" ".DS_Store" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/public/css/" (23962 48828 251478 614000) "header.css" "page.css" "index.css" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/public/js/" (23962 45923 9434 817000) "index.js" "../" "./")
+
+ ("/Users/" (23500 19311 416115 551000) "squanchyjr/" "Guest/" "Shared/" ".localized" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/public/" (23943 17453 972353 765000) ".htaccess" "files/" "img/" "js/" "css/" "index.php" ".DS_Store" "temp/" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/models/" (23943 17016 407188 959000) "Blogs.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/public/files/" (23935 8819 472106 790000) "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/views/blog/" (23934 50419 608403 231000) "595000.jpg" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/views/index/" (23930 20926 626381 255000) "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/" (23930 15631 944394 87000) ".htaccess" "595000.jpg" "database.sql" "public/" ".phalcon/" "demo.blob" ".htrouter.php" "cache/" "app/" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/models/" (23930 20775 627584 310000) "Xxx.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/controllers/" (23930 11685 628338 751000) "IndexController.php" "ControllerBase.php" "BlogController.php" ".#BlogController.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/views/" (23929 19834 99138 290000) "index/" "layouts/" "blog/" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/views/layouts/" (23928 60886 980065 447000) "../" "./")
+
+ ("/Users/squanchyjr/.emacs.d/" (23928 60812 859399 68000) "backups/" "themes/" ".git/" "elpa/" "recentf" "init.el" "auto-save-list/" "config.el" "emacs_cli_start.sh" "config.org" "eshell/" "smex-items" "ido.last" "snippets/" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/views/images/" (23928 58397 470341 740000) "new.phtml" "edit.phtml" "search.phtml" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/forms/" (23928 59911 51388 311000) "ContactForm.php" "CompaniesForm.php" "ProductTypesForm.php" "RegisterForm.php" "ProductsForm.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/public/" (23928 60986 380502 384000) ".htaccess" "files/" "img/" "js/" "css/" "index.php" "temp/" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/" (23928 60886 979919 749000) "views/" "controllers/" "models/" "library/" "config/" "migrations/" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/views/users/" (23919 55815 653258 767000) "new.phtml" "edit.phtml" "search.phtml" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/demo/app/views/categories/" (23919 55378 378584 535000) "new.phtml" "edit.phtml" "search.phtml" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/public/" (23917 5546 80146 41000) ".htaccess" "index.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/models/" (23914 19928 973332 569000) "Products.php" "Companies.php" "Users.php" "ProductTypes.php" "Contact.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/views/" (23917 5390 556582 703000) "session/" "index.volt" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/views/session/" (23917 5172 35256 740000) "index.volt" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/" (23917 5025 50206 474000) "views/" "controllers/" "config/" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/controllers/" (23917 5025 53321 97000) "SessionController.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/views/session/" (23917 4885 958311 75000) "index.volt" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/config/" (23917 4511 572870 305000) "config.ini" "services.php" "loader.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/views/products/" (23916 61899 132122 710000) "index.volt" "edit.volt" "new.volt" "search.volt" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/" (23916 61906 578144 805000) ".htaccess" ".git/" "CONTRIBUTING.md" ".gitignore" "public/" "README.md" ".phalcon/" "schemas/" "docs/" ".htrouter.php" "cache/" "app/" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/" (23916 60879 647048 258000) ".htaccess" "dummy_tables.sql" "public/" "app/" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/views/index/" (23916 60508 921928 18000) "index.volt" "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/models/" (23916 60076 730692 910000) "Users.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/public/" (23916 59721 742505 233000) ".htaccess" "fonts/" "js/" "css/" "index.php" "favicon.ico" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/views/" (23914 19928 983209 852000) "session/" "index.volt" "companies/" "errors/" "index/" "layouts/" "register/" "about/" "invoices/" "products/" "contact/" "producttypes/" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/config/" (23914 30384 705573 527000) "config.ini" "loader.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/plugins/" (23914 30270 529881 524000) "NotFoundPlugin.php" "SecurityPlugin.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/controllers/" (23914 19928 969241 773000) "InvoicesController.php" "ProductsController.php" "RegisterController.php" "IndexController.php" "SessionController.php" "ControllerBase.php" "ContactController.php" "CompaniesController.php" "ProducttypesController.php" "AboutController.php" "ErrorsController.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/invo/app/" (23914 19928 974780 928000) "views/" "controllers/" "logs/" "models/" "library/" "Services.php" "plugins/" "config/" "forms/" "../" "./")
+
+ ("/Users/squanchyjr/websites/tut_phalcon/app/config/" (23914 18983 476468 195000) ".#services.php" "config.php" "services.php" "loader.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/tut_phalcon/app/" (23914 18685 493214 950000) "config/" "../" "./")
+
+ ("/Users/squanchyjr/websites/tut_phalcon/" (23914 18685 493109 661000) ".htaccess" "app/" "../" "./")
+
+ ("/Users/squanchyjr/websites/resttest/models/" (23914 12120 963000 86000) "Robots.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/resttest/" (23914 12093 308670 13000) ".htaccess" "models/" "blahbjah.sql" "index.php" "../" "./")
+
+ ("/Users/squanchyjr/websites/test/app/views/signup/" (23907 56490 197427 263000) "index.phtml" "../" "./")
+
+ ("/Users/squanchyjr/websites/nik_mak/app/views/signup/" (23907 43155 349408 981000) "index.phtml" "../" "./")
+
+ ("/Users/squanchy2/code/final_year_project/" (23848 16935 281711 688000) "ml_forecast.py" "ml_forecast/" "test/" "../" "./")
+
+ ("/Users/squanchy2/code/final_year_project/ml_forecast/" (23848 13706 104609 76000) "../" "./")
+
+ ("/Users/squanchy2/code/" (23845 34659 755398 986000) "ctci/" "Sec_Eng_Lab_Week9_Authorization_Memory.pdf" "final_year_project/" "ltsm-test/" "use_password/" "fyp_v1/" "cool/" ".gitignore" "git_cheatsheet" "java/" "r/" "datasets/" "antlr/" "ml_forecast/" "APIUE/" ".DS_Store" "sec_Eng/" "../" "./")
+
+ ("/Users/squanchy2/.emacs.d/" (23848 14258 546535 709000) "backups/" "themes/" "elpa/" "recentf" ".#config.org" "init.el" "auto-save-list/" "config.el" "config.org" "smex-items" "ido.last" "snippets/" "../" "./")
+
+ ("/Users/squanchy2/journal/" (23845 34422 9334 429000) "TOPICS" "lack_of_trust_13_2_19" "coconut_oil_revelation_7_3_19" "Journal.org" "recurring_thoughts_10_2_19" "fish_oil_insomnia_24_1_19" "July_4.org" "mental_state_8_2_19" "short_story" "goals.org" "../" "./")
+
+ ("/Users/squanchy2/" (23838 13293 215390 589000) ".conda/" ".viminfo" ".bash_history" ".aws/" ".cache/" ".python_history" "Downloads/" "anaconda3/" ".emacs.bak/" ".bash_profile" ".antigen/" ".rstudio-desktop/" "py_v_envs/" "Documents/" ".npm/" ".keras/" ".jupyter/" ".Trash/" "pdfs/" ".profile" "Applications/" ".vimrc" "Movies/" ".ssh/" ".anaconda/" "antigen.zsh" "package-lock.json" ".bash_profile-anaconda3.bak" "Public/" ".zshrc.zwc" ".bash_sessions/" ".node_repl_history" "AgenaRisk/" ".emacs.d/" ".oracle_jre_usage/" ".lesshst" ".matplotlib/" "Library/" "Desktop/" ".ipython/" ".zsh_history" "code/" ".saves/" ".atom/" ".pylint.d/" "Pictures/" ".zshrc" "distro/" ".bashrc" ".subversion/" "bin/" ".yolk/" ".CFUserTextEncoding" ".DS_Store" "PATH.txt" "#PATH.txt#" ".vim/" "unishit/" ".condarc" "Music/" ".config/" ".Rhistory" ".emacs-saves/" "journal/" "../" "./")
+
+ ("/Users/squanchy2/.emacs.bak/" (23835 11329 828165 472000) "themes/" ".git/" "elpa/" "init.el" "auto-save-list/" "config.el" "ido.last~" "config.org" "ido.last" "snippets/" "ac-comphist.dat" "../" "./")
+
+ ("/Users/squanchy2/bin/" (23834 60119 729274 133000) "ec2_with_vol.sh" "ekill.sh" "emacs_cli_start.sh" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

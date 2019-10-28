@@ -1,0 +1,22 @@
+
+<?php
+
+use Phalcon\Mvc\Url as UrlProvider;
+
+// ...
+
+/**
+ * The URL component is used to generate all kind of URLs in the application
+ */
+$di->set(
+    'url',
+    function () use ($config) {
+        $url = new UrlProvider();
+
+        $url->setBaseUri(
+            $config->application->baseUri
+        );
+
+        return $url;
+    }
+);

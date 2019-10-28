@@ -1,0 +1,90 @@
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+	licenseKey: '57CF6A31-39B7494A-93029721-AC49AEE3',
+        scrollOverflow: true,
+    });
+    $("#realtime").click(function(){
+        $.ajax({ 
+            url: 'index/realtime',
+            success: function(data){
+		renderImages(JSON.parse(data));
+            }
+	});
+    });
+    $("#eventInt").click(function(){
+        $.ajax({ 
+            url: 'index/eventInt',
+            success: function(data){
+		renderImages(JSON.parse(data));
+	    }
+	});
+    });
+    $("#modelling").click(function(){
+        $.ajax({
+            url: 'index/modelling',
+            success: function(data){
+		renderImages(JSON.parse(data));
+            }
+	});
+    });
+    $.extend({
+	el: function(el, props) {
+            var $el = $(document.createElement(el));
+            $el.attr(props);
+            return $el;
+	}
+    });
+    function renderImages(data){
+	$(".pic_container").html("");
+	var position_arr = ['.main', '.up', '.down', '.left', '.right'];
+	var i = 0;
+	
+	for (var j=0; j<data.length; j++){
+	    if ( i == 0){
+		$(".pic_container").append(
+		    $.el('div', {'class': 'pictures'}).append(
+			$.el('div', {'class': 'row1'}).append(
+			    $.el('div', {'class': 'main', })
+			).append(
+			    $.el('div', {'class': 'smalls'}).append(
+				$.el('div', {'class': 'up'})
+			    ).append(
+				$.el('div', {'class': 'down'})
+			    )
+			)
+		    ).append(
+			$.el('div', {'class': 'row2'}).append(
+			    $.el('div', {'class': 'left'})
+			).append(
+			    $.el('div', {'class': 'right'})
+			)
+		    )
+		);
+	    }
+	    
+	    $(position_arr[i]).append(
+		$.el('a', {'href': 'blog/page/'+data[j]['id']}).append(
+		    $.el('img', {'src': '/nik_mak/public/img/'+data[j]['dir_name']+'/'+data[j]['dir_name']+'_thumbnail.'+data[j]['ext']})
+		)
+	    );
+	    i = (i + 1) % 5;
+	}
+
+    }
+    $.ajax({
+        url: 'index/all',
+        success: function(data){
+	    renderImages(JSON.parse(data));
+	    $.fn.fullpage.reBuild();
+        },
+	error: function(xhr, ajaxOptions, thrownError){
+	    console.log('eerror' + thrownError);
+	}
+    });
+    // fullpage_api.destroy();
+    // $.fn.fullpage.destroy();
+
+    // fullpage_api.setAllowScrolling(false);
+
+
+});

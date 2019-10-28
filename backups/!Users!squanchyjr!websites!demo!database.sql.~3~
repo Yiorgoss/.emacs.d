@@ -1,0 +1,6 @@
+use `test_db`;
+
+create table xxx (
+       `id` varchar(11) not null unique auto_increment,
+       `text` varchar(11) not null
+       );

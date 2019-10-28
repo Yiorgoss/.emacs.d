@@ -1,0 +1,16 @@
+<?php $this->assets->outputCss(); ?>
+<div class="form_container">
+    <form class="form_contact" action="send" method="post">
+	<label for="name">Name:</label><br>
+	<input type="text" name="name"><br>
+
+	<label for="email"> Email </label><br>
+	<input type="text" name="email"><br>
+
+	<label for="subject">Subject:</label><br>
+	<textarea type="text" name="subject"></textarea><br>
+
+	<input type="submit" value="Submit">
+    </form>
+</div>
+

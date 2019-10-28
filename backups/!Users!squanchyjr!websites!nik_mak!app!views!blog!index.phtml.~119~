@@ -1,0 +1,25 @@
+<?php
+
+$this->assets->outputCss();
+
+$php_dir = "../public/img/". $this->view->dir_name ."/";
+$img_dir = "/nik_mak/public/img/". $this->view->dir_name ."/";
+
+$files = glob($php_dir . "*");
+?>
+<h2 class="title">
+    <?php echo $this->view->info[0]['title']; ?>
+</h2>
+<div class="desc">
+    <?php echo $this->view->info[0]['description']; ?>
+</div>
+<div class="image_container">
+    <?php 
+    foreach ($files as $file)
+    {
+	$file = explode("/", $file)[4];
+	echo "<img src=". $img_dir . $file  ." alt='Image not found'>";
+    }
+    ?>
+</div>
+    

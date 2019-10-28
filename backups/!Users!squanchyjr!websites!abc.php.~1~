@@ -1,0 +1,60 @@
+<?php
+  if (!defined('ABSPATH')) exit;
+  get_header();
+?>
+<main class="wrap">
+  <div id=container>
+    <div id="header">
+      <div id="headerdiv">
+        <h3> Nik Mak </h3>
+      </div>
+      <div id="headerdiv">
+        <h3> 3D Modelling </h3>
+      </div>
+      <div id="headerdiv">
+        <h3> Event & Interaction
+      </div>
+      <div id="headerdiv">
+        <a href="#jumptohere1"> Real Time </a>
+      </div>
+      <div id="headerdiv">
+        <h3> Contact </h3>
+      </div>
+    </div>
+    <div id="bio">
+      <h1>some text</h1>
+      <h2>some text</h2>
+      <h3>some text</h3>
+    </div >
+
+    <div id="pictures">
+      <div id="jumptohere1"></div>
+      <div id="mainpicture">
+        <h1>some text</h1>
+        <h2>some text</h2>
+        <h3>some text</h3>
+      </div>
+      <div id="smallup">
+        <h1>some text</h1>
+        <h2>some text</h2>
+        <h3>some text</h3>
+      </div>
+      <div id="smalldown">
+        <h1>some text</h1>
+        <h2>some text</h2>
+        <h3>some text</h3>
+      </div>
+      <div id="mediumleft">
+        <h1>some te111xt</h1>
+        <h2>some te1111xt</h2>
+        <h3>some te1111xt</h3>
+      </div>
+      <div id="mediumright">
+        <h1>some t11111ext</h1>
+        <h2>some t11111ext</h2>
+        <h3>some 11111text</h3>
+      </div>
+    </div>
+  </div>
+</main>
+<?php get_footer(); ?>

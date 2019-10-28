@@ -1,0 +1,128 @@
+ls
+mkdir model
+ls
+rmdir model
+ls
+cd ..
+ls
+la -la
+ls -la
+vim .#index.html
+ls websites/nik_mak/
+cd websites/test/
+touch public/index.php
+touch app/controllers/IndexController.php
+cat app/controllers/IndexController.php 
+ls
+ls app
+cd app
+ls
+ls controllers/
+ls views/
+ls views/index/
+ls views/signup/
+cd websites/resttest/
+ls
+em .htaccess 
+cd ..
+cd test/app/controllers/
+ls
+cd ..
+mkdir config
+cd ..
+cd ..
+cp test/tutorial_phalcon
+cp test tut_phalcon
+test tut_phalcon
+ls
+cp -r test tut_phalcon
+cp -R test tut_phalcon
+cp test
+cp test ./abc
+ls
+cd abc
+mkdir abc
+cp test abc
+ls abc
+ls
+cp -avr test abc
+ls app
+ls abc
+mv abc/test abc
+ls abc
+ls
+ls tut
+lt tut_phalcon/
+ls tut_phalcon/
+rm -rf abc
+cd tut_phalcon/
+ls
+app  dummy_tables.sql  public  test
+rm -rf .
+ls
+rm -rf *
+ls
+mkdir app/config
+mkdir -p app/config
+touch app/config/config.php
+cd ..
+rm -rf tut_phalcon
+ls
+cd invo
+cd ..
+git clone git@github.com:phalcon/invo.git
+cd invo
+ls
+cat .htaccess 
+cd ..
+cd test
+ls
+rm -rf app
+cd websites/demo/
+ls
+cat index.html 
+cat public/index.php
+em public/index.php 
+cd ..
+phalcon create-project nik_mak
+cd nik_mak
+ls
+cd websites/bro_website/
+ls
+la
+ls -la
+cat .htaccess 
+ls -la public
+cat public/index.php
+ls ..
+ls ../nik_mak
+cat ../database.sql
+cd ..
+cd nik_mak/
+ls
+cat database.sql
+em database.sql
+emacsclient.sql
+emacsclient database.sql
+ls
+ls
+cat index.html 
+ls .htaccess
+cat .htaccess
+cat public/.htaccess 
+phalcon create scaffold users
+cd ..
+ld
+ls
+cat index.html 
+rm index.html
+ls app
+ls app/config
+cd ../
+uls
+ls
+cd websites/
+cd nik_mak/
+ls
+ls
+emacsclient app/controllers/ContactController.php 

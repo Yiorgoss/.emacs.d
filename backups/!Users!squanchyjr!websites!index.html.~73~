@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+	<html>
+	    <head>
+		<style>
+		 body {
+		     background-color: black;
+		 }
+		 h2 {
+		     text-align: center;
+		     font-size: 30px;
+		     margin: 0;
+		     font-weight: 300;
+		     /*color: inherit;*/
+		     padding: 50px;
+		 }
+
+		 .center {
+		     text-align: center;
+		 }
+
+		 section {
+		     height: 100vh;
+		 }
+
+		 /* NAVIGATION */
+		 .head_cont {
+		     width: 80%;
+		     margin: 0 auto;
+		     background: green;
+		     padding: 20px 0;
+		     /*box-shadow: 0px 5px 0px #dedede;*/
+		 }
+		 ul {
+		     list-style: none;
+		     text-align: center;
+		 }
+		 ul li {
+		     display: inline-block;
+		 }
+		 ul li a {
+		     display: block;
+		     padding: 15px;
+		     text-decoration: none;
+		     color: aqua;
+		     font-weight: 800;
+		     text-transform: uppercase;
+		     margin: 0 10px;
+
+		     transition: all .5s;
+		     position:relative;
+		     z-index: 1;
+		 }
+		 ul li a:before {
+		     transition: all .5s;
+		 }
+		 ul li a:hover {
+		     color: aqua;
+		 }
+
+		 ul li a:after {
+		     display: block;
+		     position: absolute;
+		     top: 0;
+		     left: 0;
+		     bottom: 0;
+		     right: 0;
+		     margin: auto;
+		     width: 100%;
+		     height: 1px;
+		     content: '.';
+		     color: transparent;
+		     background: black;
+		     visibility: none;
+		     opacity: 0;
+		     z-index: -1;
+		     transition: all .5s;
+		 }
+		 ul li a:hover:after {
+		     opacity: 1;
+		     visibility: visible;
+		     height: 100%;
+		 }
+
+		 #page1 {
+		     margin-top: 100vh;
+		     background-color: green;
+		     height: 100vh;
+		     width: 100vw;
+		 }
+		 #page2 {
+		     background-color: violet;
+		     height: 100vh;
+		     width: 100vw;
+		 }
+		</style>
+		<body>
+		    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.js" integrity="sha256-Lw96aZrbaAuj9vBh9haoZrkYmRA9Rbkv4K6C8LonvBk=" crossorigin="anonymous"></script>
+		    <script
+			src="https://code.jquery.com/jquery-3.4.1.js"
+			     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			     crossorigin="anonymous"></script>
+		    <div class="head_cont">
+			<ul>
+			    <li><a onclick="">Home</a></li>
+			    <li><a>3D Modelling</a></li>
+			    <li><a>Event & Interaction</a></li>
+			    <li><a>Real Time</a></li>
+			</ul>
+		    </div>
+		    <div id="page1">
+			a
+		    </div>
+		    <div id="page2">
+			b
+		    </div>
+		    <script type="text/javascript">
+		     $(document).ready(function (){
+			 $("li").on('click', function(event) {
+
+			     // Make sure this.hash has a value before overriding default behavior
+			     if (this.hash !== "") {
+				 // Prevent default anchor click behavior
+				 /* event.preventDefault(); */
+
+				 // Store hash
+				 var hash = this.hash;
+
+				 // Using jQuery's animate() method to add smooth page scroll
+				 // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+				 $('html, body').animate({
+				     scrollTop: $("#page1").offset().top
+				 }, 800, function(){
+
+				     // Add hash (#) to URL when done scrolling (default click behavior)
+				     window.location.hash = hash;
+				 });
+			     } // End if
+			 });
+		     });
+		    </script>
+		</body>
+	</html>	

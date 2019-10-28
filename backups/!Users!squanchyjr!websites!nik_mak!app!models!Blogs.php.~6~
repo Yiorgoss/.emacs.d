@@ -1,0 +1,28 @@
+<?php
+
+use Phalcon\Mvc\Model;
+
+class Blogs extends Model
+{
+    public $id;
+
+    public $title;
+
+    public $tag_id;
+
+    public $date_created;
+
+    public $view_count;
+
+    public $ext;
+
+    public $post_id;
+
+    public function initialize(){
+        $this->hasOne(
+            'post_id',
+            'Posts',
+            'id');
+    }
+}
+?>

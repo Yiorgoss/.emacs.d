@@ -1,0 +1,14 @@
+create table `dummy_1` (
+       `id` int(10) unsigned not null auto_increment,
+       `subpics` int(10) unsigned not_null,
+
+       primary key (`id`)
+       );
+
+create table `dummy_2` (
+       `id` int(10) unsigned not null auto_increment,
+       `main_pic` int(10) unsigned not null,
+
+       foreign key (`main_pic`) references dummy_1 (`id`)
+       );
+

@@ -1,0 +1,13 @@
+<?php
+
+$router = $di->getRouter();
+
+$router->add(
+    '/demo/index/1',
+    [
+        'controller' => 'index',
+        'action'     => 'aaa'
+    ]
+);
+    
+$router->handle();

@@ -1,0 +1,7 @@
+<?php
+
+use Phalcon\Mvc\Router;
+
+$router = $di->getRouter();
+    
+$router->handle();

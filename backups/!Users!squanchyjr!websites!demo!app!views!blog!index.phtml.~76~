@@ -1,0 +1,12 @@
+<h1> abc </h1>
+<?php
+/* foreach ($cars as $car)
+ * {
+ *     echo $car->text; 
+ *    readfile($car->text);
+ * } */
+
+echo "<img src='public/img/595000.jpg' alt='abc'>";
+
+
+?>

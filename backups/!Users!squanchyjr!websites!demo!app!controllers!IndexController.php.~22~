@@ -1,0 +1,20 @@
+<?php
+
+class IndexController extends ControllerBase
+{
+
+    public function indexAction()
+    {
+        $this->abc->entries = Xxx::find();
+    }
+    public function showAction($id)
+    {
+        // $this->view->id = $id;
+        echo'aaaaaa' . $id;
+        
+    }
+    public function aaaAction(){
+        echo 'abc';
+    }
+}
+

@@ -1,0 +1,11 @@
+<?php
+
+use Phalcon\Mvc\Router;
+
+$router = $di->getRouter();
+
+// $router->add(
+//     '/demo/:action/:int',
+    
+// );
+$router->handle();

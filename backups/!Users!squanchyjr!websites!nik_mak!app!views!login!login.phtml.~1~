@@ -1,0 +1,6 @@
+<div class="login_container">
+    <form action="login/valid" method="post">
+	<label for="password">Password:</label></br>
+	<input type="text" name="password">
+    </form>
+</div>

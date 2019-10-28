@@ -1,0 +1,15 @@
+<?php
+
+use Phalcon\Mvc\Router;
+
+$router = $di->getRouter();
+
+$router->add(
+    '/demo/blog/:id',
+    [
+        'controller' => 'blog',
+        'action'     => 'aaa'
+    ]
+);
+    
+$router->handle();

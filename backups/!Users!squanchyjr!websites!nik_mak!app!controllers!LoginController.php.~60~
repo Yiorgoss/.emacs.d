@@ -1,0 +1,50 @@
+<?php
+
+class LoginController extends ControllerBase {
+
+    public function indexAction(){
+        $this->assets->addCss('css/login.css');
+       
+    }
+    public function validAction(){
+        if ($this->request->isPost()) {
+            $hash = Users::findFirst()->hash;
+                        
+            $password = $_POST['password'];
+            $password = trim($password);
+            $password = stripslashes($password);
+            $password = htmlspecialchars($password);
+
+            // $password = "abc";
+            if (password_verify($password, $hash)) {
+                // echo "DDDD";
+                // return;
+                $this->session->set('auth', "root");
+                // $this->flash->success("You've been successfully logged in");
+                // $this->response->redirect('create');
+            } else {
+                echo "AAAA";
+                return;
+                $this->flashSession->error('Incorrect Password');
+                $this->response->redirect('login');
+            }
+        }
+    }
+    public function setupAction(){
+        // run one time
+        // delete after initializing
+        // password for creating blogs
+        $hash = password_hash("abc", PASSWORD_BCRYPT);
+        
+        $query = $this->modelsManager->createQuery(
+            'INSERT INTO Users(hash) VALUES (:hash:)'
+        );
+        $query->execute(
+            [
+                'hash' => $hash,
+            ]
+        );
+        
+    }
+
+}

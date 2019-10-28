@@ -1,0 +1,23 @@
+<?php
+
+require_once 'vendor/autoload.php';
+
+// Create the Transport
+$transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
+           ->setAuthMode('login')
+           ->setUsername('nikolas.website.notifier@gmail.com')
+           ->setPassword('B6699f5pd')
+;
+
+// Create the Mailer using your created Transport
+$mailer = new Swift_Mailer($transport);
+
+// Create a message
+$message = (new Swift_Message('Wonderful Subject'))
+  ->setFrom(['john@doe.com' => 'John Doe'])
+         ->setTo(['makridakisyiorgos@gmail.com', 'makridakisyiorgos@gmail.com' => 'A name'])
+  ->setBody('tastsHetastasre is ttarstatshsatrste mestasssage isatastself')
+  ;
+
+// Send the message
+$result = $mailer->send($message);

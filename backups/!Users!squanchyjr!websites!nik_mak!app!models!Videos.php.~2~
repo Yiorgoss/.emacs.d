@@ -1,0 +1,13 @@
+<?php
+
+use Phalcon\Mvc\Model;
+
+class Videos extends Model
+{
+    public $id;
+
+    public $filepath;
+
+    public $ext;
+}
+?>

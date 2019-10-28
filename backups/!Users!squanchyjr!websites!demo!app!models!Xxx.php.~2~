@@ -1,0 +1,10 @@
+<?php
+
+use Phalcon\Mvc\Model;
+
+class Xxx extends Model
+{
+    public $id;
+
+    public $text;
+}
